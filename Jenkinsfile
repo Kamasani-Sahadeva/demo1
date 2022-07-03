@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage(Git checkout from Dev) {
             steps {
-                sh "echo git cloned "
+                sh "git clone https://github.com/Kamasani-Sahadeva/demo1.git "
             }
         }
         
