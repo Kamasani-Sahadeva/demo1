@@ -7,14 +7,6 @@ pipeline {
                 sh "git clone "
             }
         }
-
-        
-        stage(Git checkout-Dev ) {
-            steps {
-                sh "echo cloned git repo "
-            }
-        }
-
         
         stage(Build code) {
             steps {
