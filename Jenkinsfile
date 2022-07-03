@@ -2,58 +2,50 @@ pipeline {
     agent any
 
     stages {
-        stage(Git checkout from main) {
+        stage("Git checkout") {
             steps {
-                sh "git clone "
+                git branch: 'Dev', url: 'https://github.com/Kamasani-Sahadeva/demo1.git'
             }
         }
-
         
-        stage(Git checkout-Dev ) {
+        stage("Build code") {
             steps {
-                sh "echo cloned git repo "
-            }
-        }
-
-        
-        stage(Build code) {
-            steps {
-                sh "echo build code & Test completed "
+                sh "echo build code"
             }
         }
 
          
-        stage(Sonarqube) {
+        stage("Sonarqube") {
             steps {
                 sh "echo code scanning and security scanning completed "
             }
         }
 
          
-        stage(Build docker image) {
+        stage("Build docker image") {
             steps {
                 sh "echo building docker image "
             }
         }
 
         
-        stage(Push image to docker hub) {
+        stage("Push image to docker hub") {
             steps {
                 sh "echo pushed image to dockerhub"
             }
         }
 
         
-        stage(Image scanning) {
+        stage("Image scanning") {
             steps {
                 sh "echo image scanning"
             }
         }
 
         
-        stage(Deployment to K8s - main Env) {
+        stage("Deployment to K8s - Dev Env") {
             steps {
-                sh "Deployed app to K8s"
+                sh "echo Deployed app to K8s"
             }
         }
 
