@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage(Git checkout from Dev) {
             steps {
-                sh "git clone "
+                sh "echo git cloned "
             }
         }
         
