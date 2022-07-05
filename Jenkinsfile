@@ -5,6 +5,7 @@ pipeline {
         stage("Git checkout") {
             steps {
                 git branch: 'Test', url: 'https://github.com/Kamasani-Sahadeva/demo1.git'
+
             }
         }
         
@@ -43,6 +44,7 @@ pipeline {
         }
 
         
+
         stage("Deployment to K8s - Test Env") {
             steps {
                 sh "echo Deployed app to K8s"
